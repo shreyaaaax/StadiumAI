@@ -1,0 +1,13 @@
+{
+  "name": "stadium-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix stadiumai/frontend",
+    "dev:backend": "powershell -Command \"cd stadiumai/backend; .venv\\Scripts\\activate; uvicorn main:app --reload\"",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

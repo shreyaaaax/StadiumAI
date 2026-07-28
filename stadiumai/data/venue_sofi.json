@@ -1,0 +1,56 @@
+{
+  "id": "sofi",
+  "name": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "capacity": 70240,
+  "address": "1001 Stadium Drive, Inglewood, CA 90301",
+  "sections": [
+    {"id": "100", "name": "Field Level - 100", "level": 1, "gates": ["1","2"]},
+    {"id": "200", "name": "Concourse Level - 200", "level": 2, "gates": ["2","3"]},
+    {"id": "400", "name": "Upper Concourse - 400", "level": 4, "gates": ["4","5"]}
+  ],
+  "gates": [
+    {"id": "1", "name": "Gate 1 - North Plaza", "location": "North side, closest to Lake Area", "accessible": true},
+    {"id": "2", "name": "Gate 2 - East Arcade", "location": "East side, plaza level entrance", "accessible": true},
+    {"id": "3", "name": "Gate 3 - Southeast Plaza", "location": "Southeast side near retail plaza", "accessible": true},
+    {"id": "4", "name": "Gate 4 - Southwest Entry", "location": "Southwest side near ticket booth", "accessible": true},
+    {"id": "5", "name": "Gate 5 - West Entry Hub", "location": "West side, main corporate entrance", "accessible": true}
+  ],
+  "facilities": {
+    "food_courts": [
+      {"name": "Olvera Street Tacos", "location": "Field level, Section 120", "hours": "11:00 AM - 11:30 PM", "vendors": ["Asada Tacos","Pollo Tacos","Esquites","Churros"]},
+      {"name": "LA Eats Marketplace", "location": "Concourse Level, Section 204", "hours": "10:30 AM - 11:00 PM", "vendors": ["Hot Dogs","Burgers","Loaded Fries","Soda"]}
+    ],
+    "restrooms": [
+      {"id": "R1", "name": "Field Suite Restrooms", "location": "Section 110 corridor", "accessible": true, "count": 30},
+      {"id": "R2", "name": "Upper Level Family Restrooms", "location": "Section 408 corridor", "accessible": true, "count": 16}
+    ],
+    "medical": [
+      {"name": "First Aid Clinic - Lower Level", "location": "Section 122 area", "staff": "Physicians + EMTs", "hours": "Active during all matches"}
+    ],
+    "atms": [
+      {"location": "East Concourse corridor", "bank": "SoFi Bank"},
+      {"location": "VIP Club Lobby", "bank": "SoFi Bank"}
+    ]
+  },
+  "transport": {
+    "metro_lines": [
+      {"name": "Metro K Line", "route": "Inglewood transit route to SoFi", "frequency": "Every 12 minutes", "fare": "$1.75"},
+      {"name": "Metro C Line", "route": "Hawthorne station express transit", "frequency": "Every 15 minutes", "fare": "$1.75"}
+    ],
+    "shuttle_stops": [
+      {"name": "Metro Shuttle Station", "location": "Hawthorne/Lennox Station Lot", "routes": ["Express Shuttle to SoFi"]},
+      {"name": "Downtown Transit Shuttle", "location": "Inglewood Civic Center", "routes": ["Civic Center Shuttle"]}
+    ],
+    "parking_zones": [
+      {"zone": "Blue Zone", "capacity": 2500, "cost": "$30", "accessibility": "40 accessible spaces"},
+      {"zone": "Pink Zone", "capacity": 3500, "cost": "$30", "accessibility": "60 accessible spaces"}
+    ]
+  },
+  "emergency_exits": [
+    "North Plaza Main Evacuation Ramp",
+    "East Canopy Exit Portal",
+    "Gate 5 West Outer Stairs"
+  ],
+  "languages_spoken_by_staff": ["en","es","zh","fr"]
+}

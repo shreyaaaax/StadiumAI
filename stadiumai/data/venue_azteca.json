@@ -1,0 +1,55 @@
+{
+  "id": "azteca",
+  "name": "Estadio Azteca",
+  "city": "Mexico City, Mexico",
+  "capacity": 87523,
+  "address": "Calzada de Tlalpan 3465, Santa Ursula Coapa, Coyoacan, 04650 CDMX",
+  "sections": [
+    {"id": "100", "name": "Platea Baja - 100", "level": 1, "gates": ["Puerta 1","Puerta 2"]},
+    {"id": "200", "name": "Preferente Especial - 200", "level": 2, "gates": ["Puerta 2","Puerta 3"]},
+    {"id": "500", "name": "Preferente Alto - 500", "level": 3, "gates": ["Puerta 3","Puerta 4"]}
+  ],
+  "gates": [
+    {"id": "Puerta 1", "name": "Puerta 1 - North Ramp", "location": "North side near Circuito Azteca", "accessible": true},
+    {"id": "Puerta 2", "name": "Puerta 2 - East Transit Gate", "location": "East side along Calzada de Tlalpan", "accessible": false},
+    {"id": "Puerta 3", "name": "Puerta 3 - South Plaza", "location": "South side near Insurgentes corridor", "accessible": true},
+    {"id": "Puerta 4", "name": "Puerta 4 - West VIP Gate", "location": "West side near main VIP gate parking", "accessible": true}
+  ],
+  "facilities": {
+    "food_courts": [
+      {"name": "Corona Food Plaza", "location": "Platea Baja, Section 114", "hours": "11:00 AM - 11:30 PM", "vendors": ["Tacos al Pastor","Quesadillas","Elotes","Refrescos"]},
+      {"name": "Coca-Cola Dining Plaza", "location": "Preferente Level, Section 502", "hours": "10:30 AM - 11:00 PM", "vendors": ["Torta de Jamon","Burgers","French Fries","Mineral Water"]}
+    ],
+    "restrooms": [
+      {"id": "R1", "name": "Platea Baja Sanatorios", "location": "Section 112 main corridor", "accessible": true, "count": 28},
+      {"id": "R2", "name": "Preferente Concourse Sanatorios", "location": "Section 518 exit hall", "accessible": true, "count": 20}
+    ],
+    "medical": [
+      {"name": "Clinica Medica Principal", "location": "Puerta 1 interior corridor", "staff": "Physicians + Nurses", "hours": "Open 3 hours before kick-off"}
+    ],
+    "atms": [
+      {"location": "Puerta 1 main lobby", "bank": "Banamex"},
+      {"location": "Puerta 4 VIP Entry lobby", "bank": "Santander"}
+    ]
+  },
+  "transport": {
+    "metro_lines": [
+      {"name": "Tren Ligero Light Rail", "route": "Estadio Azteca Station to Tasquena Metro", "frequency": "Every 5 minutes", "fare": "$3.00 MXN"},
+      {"name": "CDMX Metrobus Connection", "route": "Calzada de Tlalpan Line 2", "frequency": "Every 10 minutes", "fare": "$6.00 MXN"}
+    ],
+    "shuttle_stops": [
+      {"name": "Tlalpan Shuttle Terminal", "location": "Azteca station north plaza", "routes": ["CDMX Downtown Corridor Route"]},
+      {"name": "Colectivos Shuttle Base", "location": "South Parking Rotunda", "routes": ["Local Tour Routes"]}
+    ],
+    "parking_zones": [
+      {"zone": "General Parking Lot A", "capacity": 5000, "cost": "$100 MXN", "accessibility": "80 accessible spaces"},
+      {"zone": "VIP Parking Lot B", "capacity": 1500, "cost": "$250 MXN", "accessibility": "30 accessible spaces"}
+    ]
+  },
+  "emergency_exits": [
+    "North Evacuation Ramp R1",
+    "South Evacuation Ramp R2",
+    "Emergency tunnel T1 near field line"
+  ],
+  "languages_spoken_by_staff": ["es","en","fr"]
+}

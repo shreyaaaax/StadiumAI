@@ -1,0 +1,343 @@
+{
+  "GET_health": {
+    "url": "/health",
+    "request_method": "GET",
+    "status_code": 200,
+    "response_body": {
+      "status": "ok",
+      "venue_count": 3
+    }
+  },
+  "GET_venues": {
+    "url": "/venues",
+    "request_method": "GET",
+    "status_code": 200,
+    "response_body": [
+      {
+        "id": "azteca",
+        "name": "Estadio Azteca",
+        "city": "Mexico City, Mexico"
+      },
+      {
+        "id": "metlife",
+        "name": "MetLife Stadium",
+        "city": "East Rutherford, New Jersey"
+      },
+      {
+        "id": "sofi",
+        "name": "SoFi Stadium",
+        "city": "Inglewood, California"
+      }
+    ]
+  },
+  "POST_chat": {
+    "url": "/chat",
+    "request_method": "POST",
+    "payload": {
+      "message": "Where is Gate B?",
+      "venue_id": "metlife",
+      "language": "es"
+    },
+    "status_code": 200,
+    "response_body": {
+      "reply": "La Puerta B es la entrada Verizon Este. Se encuentra en el lado este del estadio, cerca del área de la plaza y la estación de tren. Es una entrada accesible.",
+      "language": "es",
+      "venue_id": "metlife"
+    }
+  },
+  "POST_chat_auto": {
+    "url": "/chat (auto-detect)",
+    "request_method": "POST",
+    "payload": {
+      "message": "¿Dónde está la puerta principal, por favor?",
+      "venue_id": "metlife"
+    },
+    "status_code": 200,
+    "response_body": {
+      "reply": "La puerta principal es la Puerta A, ubicada en el lado norte del estadio. Esta entrada se encuentra cerca del estacionamiento principal y cuenta con acceso para personas con discapacidad.",
+      "language": "es",
+      "venue_id": "metlife"
+    }
+  },
+  "POST_navigation": {
+    "url": "/navigation",
+    "request_method": "POST",
+    "payload": {
+      "from_location": "parking lot C",
+      "to_location": "Section 214",
+      "venue_id": "metlife",
+      "language": "fr",
+      "accessible": true
+    },
+    "status_code": 200,
+    "response_body": {
+      "text_directions": "Exit your vehicle in parking lot C and follow the signs toward the main stadium entrance.\nProceed to the accessible entrance located at Gate 3, which ",
+      "steps": [
+        "Exit your vehicle in parking lot C and follow the signs toward the main stadium entrance.",
+        "Proceed to the accessible entrance located at Gate 3, which is equipped with ramps and automatic doors.",
+        "Once inside the main concourse, locate the elevator bank labeled North Elevators.",
+        "Take the elevator to the second level.",
+        "Exit the elevator and turn left into the main corridor.",
+        "Follow the overhead signage for sections 210 through 220.",
+        "Continue walking until you reach the entrance for Section 214.",
+        "Enter the section and follow the aisle numbers to your specific row and seat."
+      ],
+      "estimated_minutes": 0,
+      "accessible_route": true,
+      "summary": "Exit your vehicle in parking lot C and follow the signs toward the main stadium entrance.\nProceed to the accessible entrance located at Gate 3, which ",
+      "accessible": true
+    }
+  },
+  "GET_crowd": {
+    "url": "/crowd/metlife?phase=half_time",
+    "request_method": "GET",
+    "status_code": 200,
+    "response_body": {
+      "phase": "half_time",
+      "zones": [
+        {
+          "id": "gate_a",
+          "name": "Gate A - North Entrance",
+          "location": "North side",
+          "type": "gate",
+          "density_percent": 65
+        },
+        {
+          "id": "gate_c",
+          "name": "Gate C - South Entrance",
+          "location": "South side",
+          "type": "gate",
+          "density_percent": 70
+        },
+        {
+          "id": "concourse_north",
+          "name": "North Concourse",
+          "location": "Level 1, North",
+          "type": "concourse",
+          "density_percent": 85
+        },
+        {
+          "id": "concourse_general",
+          "name": "General Concourse",
+          "location": "Level 1, Center",
+          "type": "concourse",
+          "density_percent": 90
+        },
+        {
+          "id": "section_upper_west",
+          "name": "Upper Deck - West",
+          "location": "Level 3, West",
+          "type": "seating",
+          "density_percent": 40
+        },
+        {
+          "id": "section_mezzanine_east",
+          "name": "Mezzanine - East",
+          "location": "Level 2, East",
+          "type": "seating",
+          "density_percent": 35
+        },
+        {
+          "id": "section_lower_north",
+          "name": "Lower Bowl - North",
+          "location": "Level 1, North",
+          "type": "seating",
+          "density_percent": 30
+        },
+        {
+          "id": "food_east",
+          "name": "East Concourse Diner",
+          "location": "Level 2, East plaza section",
+          "type": "food",
+          "density_percent": 90
+        },
+        {
+          "id": "food_north",
+          "name": "North Plaza Food Court",
+          "location": "Ground level, North concourse",
+          "type": "food",
+          "density_percent": 85
+        }
+      ]
+    }
+  },
+  "POST_crowd_predict": {
+    "url": "/crowd/predict",
+    "request_method": "POST",
+    "payload": {
+      "venue_id": "metlife",
+      "current_phase": "half_time",
+      "query": "Is there severe congestion at food courts during halftime?"
+    },
+    "status_code": 200,
+    "response_body": {
+      "zones": [
+        {
+          "name": "Gate A - North Entrance",
+          "location": "North side",
+          "density_percent": 65,
+          "status": "high"
+        },
+        {
+          "name": "Gate C - South Entrance",
+          "location": "South side",
+          "density_percent": 70,
+          "status": "high"
+        },
+        {
+          "name": "North Concourse",
+          "location": "Level 1, North",
+          "density_percent": 85,
+          "status": "critical"
+        },
+        {
+          "name": "General Concourse",
+          "location": "Level 1, Center",
+          "density_percent": 90,
+          "status": "critical"
+        },
+        {
+          "name": "Upper Deck - West",
+          "location": "Level 3, West",
+          "density_percent": 40,
+          "status": "moderate"
+        },
+        {
+          "name": "Mezzanine - East",
+          "location": "Level 2, East",
+          "density_percent": 35,
+          "status": "moderate"
+        },
+        {
+          "name": "Lower Bowl - North",
+          "location": "Level 1, North",
+          "density_percent": 30,
+          "status": "moderate"
+        },
+        {
+          "name": "East Concourse Diner",
+          "location": "Level 2, East plaza section",
+          "density_percent": 90,
+          "status": "critical"
+        },
+        {
+          "name": "North Plaza Food Court",
+          "location": "Ground level, North concourse",
+          "density_percent": 85,
+          "status": "critical"
+        }
+      ],
+      "summary": "Yes, the North Plaza Food Court and East Concourse Diner are experiencing severe congestion at 85 to 90 percent capacity. Fans should avoid these areas and instead utilize the lower-density Mezzanine ",
+      "recommendations": [
+        "Yes, the North Plaza Food Court and East Concourse Diner are experiencing severe congestion at 85 to 90 percent capacity. Fans should avoid these areas and instead utilize the lower-density Mezzanine or Upper Deck concessions. Redirect foot traffic to these underutilized levels to balance the load and improve flow."
+      ],
+      "recommendation": "Yes, the North Plaza Food Court and East Concourse Diner are experiencing severe congestion at 85 to 90 percent capacity. Fans should avoid these areas and instead utilize the lower-density Mezzanine "
+    }
+  },
+  "POST_transport_recommend": {
+    "url": "/transport/recommend",
+    "request_method": "POST",
+    "payload": {
+      "venue_id": "metlife",
+      "match_time_24h": "20:00",
+      "current_time_24h": "18:30",
+      "origin": "New York Penn Station",
+      "language": "en"
+    },
+    "status_code": 200,
+    "response_body": {
+      "recommendation": "The most efficient way to reach MetLife Stadium from New York Penn Station is to take the NJ Transit train to Secaucus Junction and transfer to the Meadowlands Rail Line. You should depart no later th",
+      "suggested_departure": "18:30 PM",
+      "options": []
+    }
+  },
+  "POST_staff_query": {
+    "url": "/staff/query",
+    "request_method": "POST",
+    "payload": {
+      "question": "What is my escalation protocol if standard security gate access is jammed?",
+      "role": "security",
+      "venue_id": "metlife"
+    },
+    "status_code": 200,
+    "response_body": {
+      "answer": "If a security gate is jammed, immediately notify your floor supervisor via radio and redirect guests to the nearest accessible alternative entrance. If the situation involves a crowd surge or safety risk, escalate the incident to the Security Operations Center for emergency support. Do not attempt to force the gate open yourself.",
+      "confidence": "high",
+      "escalation_needed": false
+    }
+  },
+  "POST_staff_incident_report": {
+    "url": "/staff/incident_report",
+    "request_method": "POST",
+    "payload": {
+      "description": "Minor spectator slip near Gate B due to wet floor.",
+      "location": "Gate B concourse area",
+      "severity": 2
+    },
+    "status_code": 200,
+    "response_body": {
+      "report_text": "If a security gate is jammed, immediately notify your floor supervisor via radio and redirect guests to the nearest accessible alternative entrance. If the situation involves a crowd surge or safety risk, escalate the incident to the Security Operations Center for emergency support. Do not attempt to force the gate open yourself."
+    }
+  },
+  "GET_sustainability_metrics": {
+    "url": "/sustainability/metlife?phase=during",
+    "request_method": "GET",
+    "status_code": 200,
+    "response_body": {
+      "venue_id": "metlife",
+      "phase": "during",
+      "energy_kwh": 13050,
+      "waste_kg": 1275,
+      "recycled_pct": 71,
+      "water_liters": 77500,
+      "carbon_kg": 6345,
+      "vs_last_match": {
+        "energy_change_pct": -6,
+        "waste_change_pct": -11
+      },
+      "eco_score": 79
+    }
+  },
+  "POST_sustainability_insight": {
+    "url": "/sustainability/insight",
+    "request_method": "POST",
+    "payload": {
+      "venue_id": "metlife",
+      "question": "How can we cut energy usage by 15% and increase recycling during the match?",
+      "phase": "during"
+    },
+    "status_code": 200,
+    "response_body": {
+      "insight": "Yes, the North Plaza Food Court and East Concourse Diner are experiencing severe congestion at 85 to 90 percent capacity. Fans should avoid these areas and instead utilize the lower-density Mezzanine or Upper Deck concessions. Redirect foot traffic to these underutilized levels to balance the load and improve flow."
+    }
+  },
+  "GET_sustainability_fan_score": {
+    "url": "/sustainability/metlife/fan_score",
+    "request_method": "GET",
+    "status_code": 200,
+    "response_body": {
+      "venue_id": "metlife",
+      "saved_co2_kg": 1078,
+      "message": "This match has saved 1078 kg of CO2 vs average! Thank you for cleaning up and recycling at the venue!"
+    }
+  },
+  "POST_accessibility_assist": {
+    "url": "/accessibility/assist",
+    "request_method": "POST",
+    "payload": {
+      "query": "Where can I find wheelchair-accessible toilets?",
+      "venue_id": "sofi",
+      "language": "en",
+      "need": "mobility"
+    },
+    "status_code": 200,
+    "response_body": {
+      "response": "Our AI assistant is busy. Please try in a moment or visit the info desk.",
+      "accessible_features_nearby": [
+        "Accessible Gate: Gate 1 - North Plaza",
+        "Accessible Gate: Gate 2 - East Arcade",
+        "Accessible Gate: Gate 3 - Southeast Plaza"
+      ]
+    }
+  }
+}

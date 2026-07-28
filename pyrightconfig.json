@@ -1,0 +1,8 @@
+{
+  "venvPath": "stadiumai/backend",
+  "venv": ".venv",
+  "extraPaths": [
+    "stadiumai",
+    "stadiumai/ai_service"
+  ]
+}

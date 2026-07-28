@@ -1,0 +1,42 @@
+[
+  {
+    "scenario_number": 1,
+    "title": "Spanish fan seat search",
+    "language": "es",
+    "venue_id": "metlife",
+    "input_text": "¿Dónde está la sección 112 para mi asiento?",
+    "expected_feature": "chat"
+  },
+  {
+    "scenario_number": 2,
+    "title": "French mobility restroom route",
+    "language": "fr",
+    "venue_id": "metlife",
+    "input_text": "Où se trouve la toilette accessible la plus proche depuis Gate A?",
+    "expected_feature": "navigation"
+  },
+  {
+    "scenario_number": 3,
+    "title": "Chinese post-match transport search",
+    "language": "zh",
+    "venue_id": "metlife",
+    "input_text": "比赛结束之后，有什么方式可以坐公交或者轻轨回市中心？",
+    "expected_feature": "transport"
+  },
+  {
+    "scenario_number": 4,
+    "title": "English volunteer medical alert",
+    "language": "en",
+    "venue_id": "metlife",
+    "input_text": "Medical incident: A fan has fainted near Gate C and requires immediate assistance.",
+    "expected_feature": "staff"
+  },
+  {
+    "scenario_number": 5,
+    "title": "Ops manager bottleneck prediction",
+    "language": "en",
+    "venue_id": "metlife",
+    "input_text": "Which areas to avoid right now due to peak bottleneck prediction?",
+    "expected_feature": "crowd"
+  }
+]

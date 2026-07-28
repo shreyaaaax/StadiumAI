@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/stadiumai/backend/.venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/stadiumai/backend/.venv/Lib/site-packages",
+    "${workspaceFolder}/stadiumai"
+  ],
+  "python.terminal.useEnvFile": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "metlife",
+  "name": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "capacity": 82500,
+  "address": "1 MetLife Stadium Drive, East Rutherford, NJ 07073",
+  "sections": [
+    {"id": "100", "name": "Lower Bowl - North", "level": 1, "gates": ["A","B"]},
+    {"id": "200", "name": "Mezzanine - East", "level": 2, "gates": ["B","C"]},
+    {"id": "300", "name": "Upper Deck - West", "level": 3, "gates": ["C","D"]}
+  ],
+  "gates": [
+    {"id": "A", "name": "Gate A - North Entrance", "location": "North side, main parking lot entrance", "accessible": true},
+    {"id": "B", "name": "Gate B - East Verizon Entrance", "location": "East side, plaza area near rail station", "accessible": true},
+    {"id": "C", "name": "Gate C - South Entrance", "location": "South side, adjacent to Pepsi plaza", "accessible": false},
+    {"id": "D", "name": "Gate D - West Entrance", "location": "West side, near VIP lots", "accessible": true}
+  ],
+  "facilities": {
+    "food_courts": [
+      {"name": "North Plaza Food Court", "location": "Ground level, North concourse", "hours": "10:00 AM - 11:00 PM", "vendors": ["Pizza","Burgers","Hot Dogs","Nachos"]},
+      {"name": "East Concourse Diner", "location": "Level 2, East plaza section", "hours": "11:00 AM - 10:00 PM", "vendors": ["Chicken Tenders","Fries","Soft Drinks"]}
+    ],
+    "restrooms": [
+      {"id": "R1", "name": "North Lower Restrooms", "location": "Ground level, North side", "accessible": true, "count": 24},
+      {"id": "R2", "name": "West Upper Restrooms", "location": "Level 3, West concourse", "accessible": true, "count": 18}
+    ],
+    "medical": [
+      {"name": "First Aid Station - North", "location": "North concourse, near Gate A", "staff": "Paramedics + Nurses", "hours": "Game day only"}
+    ],
+    "atms": [
+      {"location": "North concourse near food court", "bank": "Chase"},
+      {"location": "East plaza near gate B", "bank": "Chase"}
+    ]
+  },
+  "transport": {
+    "metro_lines": [
+      {"name": "NJ Transit Bus", "route": "Bus 191 - Direct to MetLife", "frequency": "Every 15 minutes", "fare": "$2.75"},
+      {"name": "Meadowlands Rail Line", "route": "Secaucus train connection", "frequency": "Every 10 minutes", "fare": "$4.25"}
+    ],
+    "shuttle_stops": [
+      {"name": "Shuttle Stop A", "location": "Secaucus Junction Station", "routes": ["SJU-MetLife Express"]},
+      {"name": "Shuttle Stop B", "location": "Lot P Parking Shuttle", "routes": ["Lot P Express"]}
+    ],
+    "parking_zones": [
+      {"zone": "Zone A", "capacity": 3000, "cost": "$20", "accessibility": "50 accessible spaces"},
+      {"zone": "Zone Lot E", "capacity": 4500, "cost": "$25", "accessibility": "75 accessible spaces"}
+    ]
+  },
+  "emergency_exits": [
+    "North Emergency Exit - Gate A area",
+    "South Emergency Exit - Gate D area",
+    "East Ramp Exit - near Verizon entrance"
+  ],
+  "languages_spoken_by_staff": ["en","es","fr","zh"]
+}

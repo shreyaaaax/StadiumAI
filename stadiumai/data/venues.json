@@ -1,0 +1,41 @@
+[
+  {
+    "id": "stadium-001",
+    "name": "Metropolis Arena",
+    "city": "Metro City",
+    "capacity": 80000,
+    "sports": ["Football", "Soccer"],
+    "amenities": ["VIP Lounges", "Retractable Roof", "Wi-Fi 6", "EV Charging"],
+    "description": "A state-of-the-art multi-purpose stadium equipped with a retractable roof and advanced acoustics.",
+    "pricing": {
+      "average_ticket": 120,
+      "vip_box": 5000
+    }
+  },
+  {
+    "id": "stadium-002",
+    "name": "Pacific Oval",
+    "city": "San Francisco",
+    "capacity": 45000,
+    "sports": ["Baseball", "Cricket"],
+    "amenities": ["Waterfront View", "Craft Beer Gardens", "Solar Powered"],
+    "description": "An open-air classic stadium boasting beautiful views of the bay and a vibrant fan experience.",
+    "pricing": {
+      "average_ticket": 75,
+      "vip_box": 3500
+    }
+  },
+  {
+    "id": "stadium-003",
+    "name": "Apex Dome",
+    "city": "Las Vegas",
+    "capacity": 65000,
+    "sports": ["American Football", "Concerts"],
+    "amenities": ["Full Glass Facade", "Ultra HD Screens", "Smart Parking"],
+    "description": "The ultimate entertainment hub with futuristic glass architecture and immersive sound systems.",
+    "pricing": {
+      "average_ticket": 150,
+      "vip_box": 8000
+    }
+  }
+]
